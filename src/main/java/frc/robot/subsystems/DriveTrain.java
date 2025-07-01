@@ -11,13 +11,17 @@ import edu.wpi.first.wpilibj2.command.SubsystemBase;
 public class DriveTrain extends SubsystemBase {
   /** Creates a new Neo1. */
   public DriveTrain() {}
-  SparkMax sparkMax = new SparkMax(1, MotorType.kBrushless);
-  SparkMax sparkMax2 = new SparkMax(3, MotorType.kBrushless);
+  SparkMax frontLeft = new SparkMax(1, MotorType.kBrushless);
+  SparkMax frontRight = new SparkMax(2, MotorType.kBrushless);
+  SparkMax backLeft = new SparkMax(3, MotorType.kBrushless);
+  SparkMax backRight = new SparkMax(4, MotorType.kBrushless);
 
 public void spin(double speed){
   speed = speed * -1;
-  sparkMax.set(speed);
-  sparkMax2.set(speed);
+  frontLeft.set(speed);
+  frontRight.set(speed);
+  backLeft.set(speed);
+  backRight.set(speed);
 }
   
   @Override
